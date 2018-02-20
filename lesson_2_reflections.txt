@@ -44,6 +44,6 @@ manually?
 
 	There are two scenarios where Git either merges the branches automatically or it has to be done manually.
 
-	While there are two sets of codes in different branches which contain a bug fix, adding a new feature for instance, and which essentially uses completely different functions and portion of code, Git in this case merges them automatically. It is a time saver and writing the programming is a seamless experience without interruption.
+	When there are two sets of codes in different branches which may contain a bug fix or adding a new feature for instance, and which essentially contain completely different functions and portion of code, Git in this case merges them automatically. It is a time saver and writing the program is a seamless experience without interruption.
 
-	When there are two sets of codes in different branches and they contain edited code for the same function i.e.. different implementation for the same function for instance, Git in this case clearly states a conflict and gives the programmer the ability to decide as to which code is to be considered at his/her discretion. This particularly is beneficial to rather avoid errors in compiling or running the code had it been automatically merged by Git. 
+	When there are two sets of codes in different branches and they contain edited code for the same function i.e.. different implementation for the same function for instance, Git in this case states a conflict and gives the programmer the ability to decide as to which code is to be considered at his/her discretion. This particularly is beneficial to rather avoid errors in compiling or running the code had it been automatically merged by Git. 
