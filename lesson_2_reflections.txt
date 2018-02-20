@@ -2,7 +2,7 @@ What happens when you initialize a repository? Why do you need to do it?
 
 	When a git repository is initialized, a new git repository is created which is empty (0 commits) as it is not tracking any files yet, therefore it contains no commits when it is initialized. On running git status, the untracked files are shown. 
 	It is required in order to create a git repository, add files to it and start maintaining it.
-	Git repository is different from a normal directory as it stores a bunch of metadata which helps in tracking files in the form of commits.
+	Git repository is different from a normal directory as it stores a bunch of metadata which helps in tracking files in the form of commits and offers version control.
 	It is stored on harddrive (working directory) as .git and is hidden.
 
 
@@ -10,28 +10,40 @@ How is the staging area different from the working directory and the repository?
 What value do you think it offers?
 
 	Git offers more control instead of just directly adding files to the commit. It enables to apply the thumb rule of making commits, i.e. one commit per logical change, seamlessly. It allows to specify exactly what changes to commit.
-	Staging area is an intermediate area where the files are added one at a time before from the working directory before entering the repository.
-	While the "working directory" does not offer version control, "git repository" does. But to create "git repository", commits are created allowing exactly which changes commit using "staging area".
+	Staging area is an intermediate area where the files are added one at a time from the working directory before entering the repository.
+	While the "working directory" does not offer version control, "git repository" does. But to create "git repository", commits are created allowing exactly which changes to commit using "staging area".
 
 How can you use the staging area to make sure you have one commit per logical
 change?
 
-
+	Staging area which is the intermediate area between the working directory and the repository, gives the user the ability to check exactly what changes are being committed using the "git diff --staged" command. This command gives the changes in the code if any between the staging area and the most recent commit in the repository.
+	For instance, if multiple files have been altered in the working directory, then only those files which have been altered and  added into the staging area using the "git add <file>" command will show on running the "git diff --staged" command. And then on running "git commit" command, only the those files which are altered and in the staging area will be committed and not all the altered files in the working directory.
 
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
+	Branching out helps in experimenting with your code in a way without affecting the master branch and the line of code. When the new branch which is manifesting a different idea  works out, it can be merged with the original branch. 
+	It's helpful in a number of situations. For instance, creating different versions of the same game with different difficulty levels. Or creating a different version in different languages. Here in all the examples, the master branch is left intact and can be checked out using git checkout as and when required.
 
+	When moving on a different piece of work i.e.. context switching, create a branch. Master branch could be the one which is production quality and always works and can be shared with public. While can also have a development branch using "git branch".
+	Keeps things organized in a way when different people or one person can work on different features simultaneously without making changes on the same branch but rather on different specific ones.
 
 How do the diagrams help you visualize the branch structure?
 
-
+	Diagrams using the command "git log --graph <branchname1> <branchname2>" shows the entire history of commits created to the initial commit including the branched out commits as well. Looking at the visualization, it becomes clear at what commit the branch was created, what are the common commits shared by the two branches and where it needs to be merged if required.
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
-
+	When two branches are merged, a new commit is created with multiple parents. Their respective alterations to the original code from the initial commit where the branching occurred is unified into one. Branching could be done from the master branch for various purposes such as fixing bugs and adding a new feature. In light of this, the final merged version contains these changes inherited from the respective merged branches. Running git log after merging, lists the respective commits in the branches in the order of timestamp. The merged branch can later be deleted if required without the risk of losing the alterations made in that branch. While merging the current checked out branch, is respositioned to the new commit.
+	
+	Diagrammatically, their respective lines of code are merged into one. This gives a clear picture of the branches and their commits, including the parent commit leading so on to the initial commit where the branching occurred.
 
 What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
 
+	There are two scenarios where Git either merges the branches automatically or it has to be done manually.
+
+	While there are two sets of codes in different branches which contain a bug fix, adding a new feature for instance, and which essentially uses completely different functions and portion of code, Git in this case merges them automatically. It is a time saver and writing the programming is a seamless experience without interruption.
+
+	When there are two sets of codes in different branches and they contain edited code for the same function i.e.. different implementation for the same function for instance, Git in this case clearly states a conflict and gives the programmer the ability to decide as to which code is to be considered at his/her discretion. This particularly is beneficial to rather avoid errors in compiling or running the code had it been automatically merged by Git. 
