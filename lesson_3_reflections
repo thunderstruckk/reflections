@@ -1,7 +1,7 @@
 When would you want to use a remote repository rather than keeping all your work
 local?
 
-    Fill in your answer here
+    Creating and maintaining a remote repository is extremely useful when collaborating with different programmers on a project. A remote       repository makes it possible to host your files remotely on the Github server where it can be downloadeded (pull), updated/edited/new       file uploaded (push) by different Git users depending on if it is a public repository or a private repository limited to fixed number       of users. It also helps in keeping a backup of the files on the server and can be easily accessed from a different machine other than       the local machine in use.
 
 Why might you want to always pull changes manually rather than having Git
 automatically stay up-to-date with your remote repository?
